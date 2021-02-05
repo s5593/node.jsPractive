@@ -10,7 +10,7 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-const url = 'mongodb://127.0.0.1:27017/conntest';
+const url = 'mongodb+srv://kck:1234@cluster0.qnvs4.mongodb.net/sample_geospatial';
 
 
 function connect_mongodb(response)

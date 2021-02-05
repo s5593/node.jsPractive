@@ -35,7 +35,7 @@ db.once('open', function(){
     console.log("Connected to mongod server");
 });
 
-app.get('/', function(request, response){
+app.post('/', function(request, response){
   console.log('connect mongodb...');
   console.log(request.body);
 
@@ -44,7 +44,7 @@ app.get('/', function(request, response){
 });
 
 //입력
-app.get('/insert', function(request, response){
+app.post('/insert', function(request, response){
   // mykey = request.body.mykey;
 
 

@@ -19,7 +19,7 @@ app.get('/', function(request, response){
   });
   
   //입력
-  app.get('/insert', function(request, response){
+  app.post('/insert', function(request, response){
     // mykey = request.body.mykey;
 
   
@@ -31,7 +31,7 @@ app.get('/', function(request, response){
     //response.send('success...');
   });
   
-  app.listen(3000, function(){
+  app.listen(3001, function(){
     console.log('Connected 3000 port')
     console.log('--------------------------');
   });
