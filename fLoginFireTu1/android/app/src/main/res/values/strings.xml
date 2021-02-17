@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">fLoginFireTu1</string>
+    <string name="facebook_app_id">931972157610998</string> <string name="fb_login_protocol_scheme">fb931972157610998</string>   <!--페이스북 연결용-->
+</resources>
