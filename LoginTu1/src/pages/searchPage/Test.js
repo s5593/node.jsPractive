@@ -8,19 +8,18 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {Text} from 'react-native'
-import {ContextProvider } from './src/context/Context'
-import LoginRoutes from './src/route/LoginRoute'
+// import {ContextProvider } from './src/context/Context'
 
 
 
-const App = () => {
+const Test = () => {
 
   return (
-    <ContextProvider>
-      <LoginRoutes/>
-    </ContextProvider>
+    <Text>
+        Search page
+    </Text>
   );
 };
 
 
-export default App;
+export default Test;
