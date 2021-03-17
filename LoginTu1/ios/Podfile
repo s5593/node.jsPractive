@@ -8,6 +8,10 @@ target 'LoginTu1' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
+  pod 'RNCPicker', :path => '../node_modules/@react-native-community/picker'
+
   target 'LoginTu1Tests' do
     inherit! :complete
     # Pods for testing

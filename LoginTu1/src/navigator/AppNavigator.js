@@ -9,17 +9,15 @@ import UserPage from '../pages/UserPage'
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
-    const navigation = useNavigation(DrawerNavigator);
 
     return(
         <Stack.Navigator
-        initialRouteName='DrawerNavigator'>
+        headerMode='none'>
             {/* 로그인 후 DrawerNavigator로 이동(Main으로 이동할 예정) */}
             <Stack.Screen
                 name='DrawerNavigator'
                 component={DrawerNavigator}
                 />
-            <Stack.Screen name='UserPage' component={UserPage}/>
         </Stack.Navigator>
     );
 }

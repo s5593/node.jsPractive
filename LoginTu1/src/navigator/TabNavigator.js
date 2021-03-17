@@ -10,6 +10,7 @@ const TabNavigator = () => {
     <Tab.Navigator
     initialRouteName="Home"
     screenOptions={({ route }) => ({
+        tabBarVisible: 'false',
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
   
@@ -22,7 +23,6 @@ const TabNavigator = () => {
           } else if (route.name === 'Setting'){
             iconName = focused ? 'settings' : 'settings-outline';
           }
-  
           // You can return any component that you like here!
           return <Icon name={iconName} size={20}  color={color}/>;
         },
@@ -30,6 +30,8 @@ const TabNavigator = () => {
       tabBarOptions={{
         activeTintColor: 'black',
         inactiveTintColor: 'gray',
+        showLabel: 'true',
+        keyboardHidesTabBar:'false'
       }}>
         <Tab.Screen name = "Home" component={HomeStack} />
         <Tab.Screen name = "Image" component={UserImageStack} />

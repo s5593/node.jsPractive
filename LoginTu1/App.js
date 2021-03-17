@@ -10,10 +10,17 @@ import React from 'react';
 import {Text} from 'react-native'
 import {ContextProvider } from './src/context/Context'
 import LoginRoutes from './src/route/LoginRoute'
+import SplashScreen from 'react-native-splash-screen'
 
 
 
 const App = () => {
+
+  React.useEffect(() => {
+    setTimeout(() => {
+        SplashScreen.hide();
+    }, 1000);
+  }, [])
 
   return (
     <ContextProvider>

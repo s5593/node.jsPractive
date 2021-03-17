@@ -9,14 +9,18 @@ import {
 const defaultContext = {
     googleInfo: undefined,
     setGoogleInfo: undefined,
+    logIn: undefined,
+    setLogIn: undefined,
     signIn: async () => {},
     signOut: async () => {},
 };
 
 
 /**
- * googleInfo: 로그인 정보
- * setGoogleInfo: 로그인 정보 입력
+ * googleInfo: 구글 로그인 정보
+ * setGoogleInfo: 구글 로그인 정보 입력
+ * logIn: 로그인 정보
+ * setLogIn: 로그인 정보 입력
  * signIn: 로그인
  * signOut: 로그아웃
  * 
@@ -30,6 +34,7 @@ const ContextProvider = ({children}) => {
    * 로그인 정보를 저장하는 변수
    */
   const [googleInfo, setGoogleInfo] = React.useState();
+  const [logIn, setLogIn] = React.useState();
 
   /**
    * 로그인 정보가 남아있으면 자동 로그인
@@ -37,25 +42,17 @@ const ContextProvider = ({children}) => {
   React.useEffect(()=>{
     getCurrentUser();
   });
+  
+
   /**
-   * 구글 로그인을 위한 클라이언트 ID
-   */
-  GoogleSignin.configure({
-    webClientId: '985356881887-8ivnbvrnppcnilp41ii9kl9bvqmvne6i.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
-    offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
-  });
-  /**
-   * 로그인
+   * 구글 로그인
    */
   const signIn = async () => {
     try {
         await GoogleSignin.hasPlayServices();
         const userInfo = await GoogleSignin.signIn();
         //   this.setState({ userInfo });
-        console.log(userInfo)
         setGoogleInfo(userInfo);
-        console.log(googleInfo+' :: userInfo')
-        console.log('load true')
         } catch (error) {
         if (error.code === statusCodes.SIGN_IN_CANCELLED) {
             // user cancelled the login flow
@@ -90,7 +87,7 @@ const ContextProvider = ({children}) => {
     };
     
     /**
-     * 로그아웃
+     * 구글 로그아웃
      */
     const signOut = async () => {
       try {
@@ -107,6 +104,8 @@ const ContextProvider = ({children}) => {
         <AuthContext.Provider 
         value={{
             googleInfo,
+            logIn,
+            setLogIn,
             setGoogleInfo,
             signIn,
             signOut,
