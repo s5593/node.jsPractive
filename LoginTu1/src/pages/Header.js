@@ -6,9 +6,9 @@ import styled from 'styled-components'
 
 const HeaderText = styled.Text`
     color: #000000;
-    fontSize: 32px;
-    fontFamily: 'Billabong';
-    paddingTop:13px;
+    font-size: 32px;
+    font-family: 'Billabong';
+    padding-top:13px;
 `;
 
 const HeaderView = styled.View`

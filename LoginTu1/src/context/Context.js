@@ -1,7 +1,6 @@
 import React from 'react'
 import {
     GoogleSignin,
-    GoogleSigninButton,
     statusCodes,
   } from '@react-native-community/google-signin';
 
@@ -43,6 +42,14 @@ const ContextProvider = ({children}) => {
     getCurrentUser();
   });
   
+  /**
+   * 구글 로그인을 위한 클라이언트 ID
+   */
+  
+ GoogleSignin.configure({
+   webClientId: '985356881887-8ivnbvrnppcnilp41ii9kl9bvqmvne6i.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
+   offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
+ });
 
   /**
    * 구글 로그인

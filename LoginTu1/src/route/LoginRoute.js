@@ -20,7 +20,7 @@ const Routes = () => {
 
   return(
     <NavigationContainer >
-      {Auth.googleInfo ?  <AppNavigator/>: <LoginNavigator/>}
+      {Auth.googleInfo ?  <AppNavigator/> : <LoginNavigator/>}
     </NavigationContainer> 
   );
 }

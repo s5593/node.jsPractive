@@ -2,74 +2,75 @@ import React from 'react'
 import {View, TouchableOpacity, Text, SafeAreaView, ScrollView} from 'react-native'
 import {AuthContext} from '../../context/Context'
 import styled from 'styled-components'
-import { GoogleSigninButton } from '@react-native-community/google-signin';
+import { GoogleSigninButton } from '@react-native-community/google-signin'
 
 const LogoImage = styled.Image`
     flex:1;
     width: 100%;
     height: 10%;
     padding: 15%;
-    marginTop: 15%;
-    marginBottom:15%;
+    margin-top: 15%;
+    margin-bottom:15%;
 `;
 
 const LoginImage = styled.Image`
     flex:1;
     width: 80%;
     padding: 8%;
-    marginTop: 5%;
-    marginBottom:5%;
-    alignSelf: center;
+    margin-top: 5%;
+    margin-bottom:5%;
+    align-self: center;
 `;
 
 const LoginBox = styled.TextInput`
     border: 1px solid #DCDCDC;
-    borderRadius: 3px;
-    backgroundColor: #F5F5F5;
+    border-radius: 3px;
+    background-color: #F5F5F5;
     width: 85%;
     padding: 3%;
-    marginBottom:5%;
-    alignSelf: center;
-    fontSize:15px;
+    margin-bottom:5%;
+    align-self: center;
+    font-size:15px;
 `;
 
 const LoginButton = styled.View`
     width: 85%;
-    alignSelf: center;
-    alignContent: center;
-    fontSize:15px;
+    align-self: center;
+    align-content: center;
+    font-size:15px;
 `;
 
 const LoginText = styled.TouchableOpacity`
     width: 100%;
     padding: 3%;
-    justifyContent: center;
-    alignItems: center;
-    alignSelf: center;
-    borderRadius: 5px;
-    backgroundColor: #1E90FF;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    border-radius: 5px;
+    background-color: #1E90FF;
     color:#F5F5F5;
 `;
+
 const Line = styled.View`
     flex-grow: 1;
-    flexDirection: row;
-    alignItems: flex-start
+    flex-direction: row;
+    align-items: flex-start;
 `;
 
 const SignUpContents = styled.TouchableOpacity`
-    textAlign: center;
+    text-align: center;
 `;
 
 const SignUpContainer = styled.View`
-    justifyContent: space-between;
-    flexDirection: row;
-    alignContent: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-content: center;
     margin: 5% 20%;
 `;
 
 const TouchText = styled.Text`
     margin: 5%;
-    textAlign: center;
+    text-align: center;
 `;
 
 
