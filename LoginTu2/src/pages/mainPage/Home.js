@@ -1,5 +1,5 @@
 import React from 'react'
-import {SafeAreaView, Text, View, ScrollView} from 'react-native'
+import {SafeAreaView, RefreshControl, Text, Alert, View, ScrollView} from 'react-native'
 import {AuthContext} from '../../context/Context'
 import DrawerNavigator from '../../navigator/DrawerNavigator'
 import {useNavigation} from '@react-navigation/native'
@@ -53,11 +53,39 @@ const ButtonTouch = styled.TouchableOpacity`
     backgroundColor: #FAF0E6;
 `;
 
+/**
+ * 새로고침 
+ */
+const wait = (timeout) => {
+    return new Promise(resolve => setTimeout(resolve, timeout));
+}
 
 const Home = () => {
+    const createTwoButtonAlert = () =>
+    Alert.alert(
+      "Alert Title",
+      "My Alert Msg",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed")
+        },
+        { text: "OK", onPress: () => console.log("OK Pressed") }
+      ]
+    );
+
     const [selectedValue, setSelectedValue] = React.useState("14");
     const Auth = React.useContext(AuthContext);
     const navigation = useNavigation(DrawerNavigator);
+
+    /**
+     * 새로고침 
+     */
+    const [refreshing, setRefreshing] = React.useState(false);
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        wait(2000).then(() => setRefreshing(false));
+    }, []);
 
     return (
         <>
@@ -70,7 +98,12 @@ const Home = () => {
                     <Picker.Item label="이름" value="2" />
                 </Picker>
             </Sort>
-            <List>
+            <List refreshControl={
+                <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                />}
+             >
                 <ListItem onPress={() => {}}>
                             <Tag>
                                 리스트 1
@@ -129,8 +162,8 @@ const Home = () => {
             </List>
         </Content>
         <ButtonView>
-            <ButtonTouch onPress={() => {}}>
-                <Text>from</Text>
+            <ButtonTouch onPress={() => createTwoButtonAlert}>
+                <Text>form</Text>
             </ButtonTouch>
         </ButtonView>
         </>

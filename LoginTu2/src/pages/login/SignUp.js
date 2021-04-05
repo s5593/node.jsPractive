@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, TouchableOpacity, Text, SafeAreaView} from 'react-native'
+import {View, TouchableOpacity, KeyboardAvoidingView, Text, SafeAreaView} from 'react-native'
 import {AuthContext} from '../../context/Context'
 import styled from 'styled-components'
 
@@ -53,24 +53,29 @@ textAlign: center;
 
 const SignUp = ({navigation}) => {
     return(
-        <SafeAreaView>
-            <LogoImage source={require('../../assets/react-native.png')}/>
-            <LoginBox placeholder = "Email or PhoneNumber"/>
-            <LoginBox placeholder = "Name"/>
-            <LoginBox placeholder = "Nicname"/>
-            <LoginBox secureTextEntry={true} placeholder = "Password"/>
-            <SignUpButton>
-                <SignUpText 
-                    onPress ={() => {} }
-                >
-                    <Text style = {{color:'white'}}>가입</Text>
-                </SignUpText>
-                <TouchText>계정이 있으신가요?</TouchText>
-            </SignUpButton>
-            <SignUpContents onPress={() => navigation.goBack()}>
-                <TouchText>로그인</TouchText>
-            </SignUpContents>
-        </SafeAreaView>
+        <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={{flex: 1}}
+        >
+            <SafeAreaView>
+                <LogoImage source={require('../../assets/react-native.png')}/>
+                <LoginBox placeholder = "Email or PhoneNumber"/>
+                <LoginBox placeholder = "Name"/>
+                <LoginBox placeholder = "Nicname"/>
+                <LoginBox secureTextEntry={true} placeholder = "Password"/>
+                <SignUpButton>
+                    <SignUpText 
+                        onPress ={() => {} }
+                    >
+                        <Text style = {{color:'white'}}>가입</Text>
+                    </SignUpText>
+                    <TouchText>계정이 있으신가요?</TouchText>
+                </SignUpButton>
+                <SignUpContents onPress={() => navigation.goBack()}>
+                    <TouchText>로그인</TouchText>
+                </SignUpContents>
+            </SafeAreaView>
+        </KeyboardAvoidingView>
     );
 }
 

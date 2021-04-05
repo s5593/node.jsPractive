@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, TouchableOpacity, Text, SafeAreaView, ScrollView} from 'react-native'
+import {View, TouchableOpacity, KeyboardAvoidingView, Text, SafeAreaView, ScrollView} from 'react-native'
 import {AuthContext} from '../../context/Context'
 import styled from 'styled-components'
 import { GoogleSigninButton } from '@react-native-community/google-signin'
@@ -83,6 +83,10 @@ const GoogleLogin = ({navigation}) => {
 
     return(
         //구글 로그인 버튼
+        <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={{flex: 1}}
+    >
         <SafeAreaView>
             <ScrollView>
                 <LogoImage source={require('../../assets/react-native.png')}
@@ -114,6 +118,7 @@ const GoogleLogin = ({navigation}) => {
                 </SignUpContainer>
             </ScrollView>
         </SafeAreaView>
+        </KeyboardAvoidingView>
     );
 }
 
