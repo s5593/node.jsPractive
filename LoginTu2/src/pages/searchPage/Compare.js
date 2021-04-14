@@ -16,27 +16,27 @@ const MainBox = styled.View`
 
 const Img = styled.Image` 
     flex:1;   
-    resizeMode: contain;
+    resizeMode: cover;
 `;
 
 const ImgBox = styled.View`
     align-self: flex-start;
-    margin: 10px;
-    width: 180px;
-    height: 180px;
+    margin: 3%;
+    width: 40%;
+    height: 80%;
     border: 1px solid #000;
     border-radius:3px;
 `;
 
 const Result = styled.ScrollView`
-margin: 5px 0;
+margin: 2% 0;
 border: 1px solid #000;
 width: 100%;
 align-self:center;
 `;
 
 const ResultBox = styled.View`
-    margin: 5px 0;
+    margin: 2% 0;
     border: 1px solid #000;
     width: 100%;
     align-self:center;
@@ -44,7 +44,7 @@ const ResultBox = styled.View`
 `;
 
 const ResultText = styled.Text`
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
 `;
 
@@ -61,7 +61,7 @@ const Compare = () => {
         ],
         barColors: ["#F5F5F5", "#DCDCDC", "#D3D3D3", '#A9A9A9', '#696969', "#F5F5F5", "#DCDCDC"]
       };
-      const chartConfig = {
+    const chartConfig = {
         backgroundGradientFrom: "#1E2923",
         backgroundGradientFromOpacity: 0,
         backgroundGradientTo: "#08130D",
@@ -70,7 +70,7 @@ const Compare = () => {
         strokeWidth: 10, // optional, default 3
         barPercentage: 2,
         useShadowColorFromDataset: false // optional
-      };
+    };
 
     return(
         <View>

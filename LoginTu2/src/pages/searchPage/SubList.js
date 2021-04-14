@@ -19,18 +19,18 @@ const Img = styled.Image`
 
 const ImgBox = styled.View`
     align-self: flex-start;
-    margin: 10px;
-    width: 180px;
-    height: 180px;
+    margin: 3%;
+    width: 40%;
+    height: 80%;
     border: 1px solid #000;
     border-radius:3px;
 `;
 
 const InfoBox = styled.View`
     border: 1px solid #000;
-    margin: 10px;
-    width: 180px;
-    height: 180px;
+    margin: 3%;
+    width: 40%;
+    height: 80%;
     border-radius:3px;
 `;
 
@@ -45,7 +45,7 @@ const List = styled.TouchableOpacity`
     flex-direction: row;
     width: 98%;
     height: 85px;
-    margin: 5px 0;
+    margin: 7px 0 7px 7px;
     padding: 1px;
     border-bottom-width: 2px;
     border-bottom-color: #e5e5e5;
@@ -53,14 +53,14 @@ const List = styled.TouchableOpacity`
 `;
 
 const SubImg = styled.View`
-    width: 75px;
-    height: 75px;
+    width: 19%;
+    height: 90%;
     border-radius:3px;
     border: 1px solid #000080;
 `;
 
 const SubTitle = styled.View`
-    height: 75px;
+    height: 90%;
     width: 63%;
     margin: 0px 5px;
     justify-content: center;
@@ -72,7 +72,7 @@ const SubTitleText = styled.Text`
 `;
 
 const SubDate = styled.View`
-    height: 75px;
+    height: 90%;
     width: 16%;
     justify-content: center;
 `;

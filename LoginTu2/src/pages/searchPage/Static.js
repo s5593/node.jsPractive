@@ -18,19 +18,19 @@ const Img = styled.Image`
 `;
 
 const ImgBox = styled.View`
-    align-self: flex-start;
-    margin: 10px;
-    width: 180px;
-    height: 180px;
+    margin: 3%;
+    width: 40%;
+    height: 80%;
     border: 1px solid #000;
     border-radius:3px;
+    justify-content:center;
 `;
 
 const InfoBox = styled.View`
     border: 1px solid #000;
-    margin: 10px;
-    width: 180px;
-    height: 180px;
+    margin: 3%;
+    width: 40%;
+    height: 80%;
     border-radius:3px;
     justify-content:center;
 `;
@@ -51,9 +51,9 @@ const StaticBox = styled.ScrollView`
 const Static = styled.View`
     flex-direction: row;
     width: 98%;
-    height: 85px;
-    margin: 5px 0;
-    padding: 1px;
+    height: 70px;
+    margin: 1.5% 0;
+    padding: 0.3%;
     border-bottom-width: 2px;
     border-bottom-color: #e5e5e5;
 `;
@@ -66,10 +66,10 @@ const StaticDate = styled.View`
     flex-direction:row;
     justify-content:space-between;
     width:100%;
-    height:70px;
-    margin: 10px 0;
+    height:15%;
+    margin: 5% 0;
     align-self:center;
-    padding: 0 50px;
+    padding: 0 10%;
 `;
 
 

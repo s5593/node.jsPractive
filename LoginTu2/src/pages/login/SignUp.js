@@ -1,55 +1,7 @@
 import React from 'react'
-import {View, TouchableOpacity, KeyboardAvoidingView, Text, SafeAreaView} from 'react-native'
+import {KeyboardAvoidingView, SafeAreaView} from 'react-native'
 import {AuthContext} from '../../context/Context'
-import styled from 'styled-components'
-
-const LogoImage = styled.Image`
-    flex:1;
-    width: 80%;
-    padding: 10%;
-    marginTop: 10%;
-    marginBottom:10%;
-    alignSelf:center;
-`;
-
-const LoginBox = styled.TextInput`
-    border: 1px solid #DCDCDC;
-    borderRadius: 3px;
-    backgroundColor: #F5F5F5;
-    width: 85%;
-    padding: 3%;
-    marginBottom:1%;
-    alignSelf: center;
-    fontSize:15px;
-`;
-
-const TouchText = styled.Text`
-    marginTop: 5%;
-    textAlign: center;
-`;
-
-const SignUpText = styled.TouchableOpacity`
-    width: 100%;
-    padding: 3%;
-    justifyContent: center;
-    alignItems: center;
-    alignSelf: center;
-    borderRadius: 5px;
-    backgroundColor: #1E90FF;
-    color:#F5F5F5;
-`;
-
-const SignUpButton = styled.View`
-    width: 85%;
-    marginTop: 5%;
-    alignSelf: center;
-    alignContent: center;
-    fontSize:15px;
-`;
-
-const SignUpContents = styled.TouchableOpacity`
-textAlign: center;
-`;
+import {LoginButton, LoginInput, Text, TextOpocity, LoginView, BlockText, LogoImage} from '../../components/LoginComponents'
 
 const SignUp = ({navigation}) => {
     return(
@@ -58,22 +10,18 @@ const SignUp = ({navigation}) => {
             style={{flex: 1}}
         >
             <SafeAreaView>
+                <LoginView>
                 <LogoImage source={require('../../assets/react-native.png')}/>
-                <LoginBox placeholder = "Email or PhoneNumber"/>
-                <LoginBox placeholder = "Name"/>
-                <LoginBox placeholder = "Nicname"/>
-                <LoginBox secureTextEntry={true} placeholder = "Password"/>
-                <SignUpButton>
-                    <SignUpText 
-                        onPress ={() => {} }
-                    >
-                        <Text style = {{color:'white'}}>가입</Text>
-                    </SignUpText>
-                    <TouchText>계정이 있으신가요?</TouchText>
-                </SignUpButton>
-                <SignUpContents onPress={() => navigation.goBack()}>
-                    <TouchText>로그인</TouchText>
-                </SignUpContents>
+                <LoginInput placeholder = "Email or PhoneNumber"/>
+                <LoginInput placeholder = "Name"/>
+                <LoginInput placeholder = "Nicname"/>
+                <LoginInput secureTextEntry={true} placeholder = "Password"/>
+                <LoginButton onPress ={() => {} } title='가입' />
+                <BlockText>계정이 있으신가요?</BlockText>
+                <TextOpocity onPress={() => navigation.goBack()}>
+                    <Text>로그인</Text>
+                </TextOpocity>
+                </LoginView>
             </SafeAreaView>
         </KeyboardAvoidingView>
     );

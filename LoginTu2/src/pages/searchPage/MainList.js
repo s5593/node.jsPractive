@@ -18,10 +18,11 @@ const ThumnailBox = styled.View`
     align-self: flex-start;
     flex-direction: row;
     margin: 10px;
-    width: 150px;
-    height: 150px;
+    width: 40%;
+    height: 90%;
     border: 1px solid #000;
     border-radius:3px;
+    justify-content: center;
 `;
 
 const Input = styled.TextInput`
@@ -32,28 +33,39 @@ const Input = styled.TextInput`
 `;
 
 const List = styled.TouchableOpacity`
-  margin : 20px;
-  padding : 5px;
-  border : 1px solid #000; 
+  margin : 5%;
+  padding : 2%;
+  border : 1px solid #000;
   border-radius: 10px;
+  width: 90%;
+  height: 75%;
 `;
 
 const ListBox1 = styled.View`
   border : 1px solid #000;
   border-radius: 5px;
+  width: 100%;
+  height:55%;
 `;
 
 const ListBox2 = styled.View`
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  margin : 5px;
+  margin : 3%;
+  width: 95%;
+  height: 30%;
 `;
 
 const ListContents = styled.View`
-  width: 45%;
+  width: 40%;
+  height: 75%;
   margin : 5px;
   justify-content: center;
+`;
+
+const Blank = styled.View`
+  height: 4%;
 `;
 
 const ListText = styled.Text`
@@ -62,7 +74,7 @@ const ListText = styled.Text`
 `;
 
 const ResultText = styled.Text`
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   border-bottom-color: #ccc;
   border-bottom-width: 2.5px;
@@ -140,7 +152,7 @@ const Test = ({navigation}) => {
       ) : (
           <Pages
           indicatorColor='#000'
-          indicatorOpacity={0.2}
+          indicatorOpacity={0.1}
           >
       
         {list.map(item => (
@@ -159,6 +171,7 @@ const Test = ({navigation}) => {
               </ListContents>
             </ListBox2>
             <ListBox1>
+              <Blank/>
               <ListBox2>
               <ListContents>
                 <ListText>평균 유사도{"\n"}</ListText>
@@ -169,6 +182,7 @@ const Test = ({navigation}) => {
               <ResultText>92%</ResultText>
               </ListContents>
               </ListBox2>
+              <Blank/><Blank/>
               <ListBox2>          
               <ListContents>
                 <ListText>측정시작일자{"\n"}</ListText>
