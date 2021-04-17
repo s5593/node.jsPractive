@@ -80,7 +80,24 @@ const ResultText = styled.Text`
   border-bottom-width: 2.5px;
 `;
 
-const Test = ({navigation}) => {
+const ButtonView = styled.View`
+    borderWidth:0;
+    position:absolute;
+    bottom:20px;
+    right:20px;
+    alignSelf:flex-end;
+`;
+
+const ButtonTouch = styled.TouchableOpacity`
+    width: 50px;
+    height: 50px;
+    justifyContent: center;
+    alignItems: center;
+    borderRadius: 100px;
+    backgroundColor: #FAF0E6;
+`;
+
+const MainList = ({navigation}) => {
   const Auth = React.useContext(AuthContext);
 
   const [keyword, setKeyword] = React.useState('');
@@ -153,8 +170,7 @@ const Test = ({navigation}) => {
           <Pages
           indicatorColor='#000'
           indicatorOpacity={0.1}
-          >
-      
+          >      
         {list.map(item => (
           // list에서 key는 중복없이 존재해야 함(필수)
           <List key={item.movieCd} onPress={() => {navigation.navigate('MainTabNavigator')}}>
@@ -195,11 +211,17 @@ const Test = ({navigation}) => {
               </ListBox2>              
             </ListBox1>
           </List>     
-        ))} 
+        ))}
+
         </Pages>
       )}
+              <ButtonView>
+            <ButtonTouch onPress={() => {navigation.navigate('Select')}}>
+                <Text>form</Text>
+            </ButtonTouch>
+        </ButtonView>
     </>   
   )}
   
 
-export default Test;
+export default MainList;

@@ -16,6 +16,7 @@ import Practice from '../pages/mainPage/Practice'
 import DrawerNavigator from './DrawerNavigator'
 import {Header, Left, Right} from '../pages/Header'
 import MainTabNavigator from './MainTabNavigator'
+import Select from '../pages/searchPage/Select'
 
 const Stack = createStackNavigator();
 const titleAlign = 'center'
@@ -189,6 +190,24 @@ const MainListStack = ({route, navigation}) => {
                   </View>
                   ),
                 }}/>
+                 <Stack.Screen
+              name='Select'
+              component={Select}
+              options={{
+                headerTitle: () => <Header name='Select' />,
+                  headerTitleAlign: {titleAlign},
+                  headerLeft: () => (
+                    <View style={{marginRight: 10}}>
+                      <Icon.Button
+                      name="md-chevron-back"
+                      size={22}
+                      backgroundColor="#fff"
+                      color="#2e64e5"
+                      onPress={() => navigation.pop() }
+                      />
+                  </View>
+                  ),
+                }}/>
       </Stack.Navigator>
   );
 }
@@ -249,6 +268,7 @@ const StaticStack  = () => {
       </Stack.Navigator>
   );
 }
+
 
                   
 
