@@ -17,6 +17,7 @@ import DrawerNavigator from './DrawerNavigator'
 import {Header, Left, Right} from '../pages/Header'
 import MainTabNavigator from './MainTabNavigator'
 import Select from '../pages/searchPage/Select'
+import SelectInMainList from '../pages/searchPage/SelectInMainList'
 
 const Stack = createStackNavigator();
 const titleAlign = 'center'
@@ -196,6 +197,27 @@ const MainListStack = ({route, navigation}) => {
               options={{
                 headerTitle: () => <Header name='Select' />,
                   headerTitleAlign: {titleAlign},
+                  headerLeft: () => (
+                    <View style={{marginRight: 10}}>
+                      <Icon.Button
+                      name="md-chevron-back"
+                      size={22}
+                      backgroundColor="#fff"
+                      color="#2e64e5"
+                      onPress={() => navigation.pop() }
+                      />
+                  </View>
+                  ),
+                }}/>
+                <Stack.Screen
+              name='SelectInMainList'
+              component={SelectInMainList}
+              options={{
+                headerTitle: () => <Header name='Select in MainList' size={27} />,
+                  headerTitleAlign: {titleAlign},
+                  headerTitleStyle:{
+                    fontSize:"20",
+                  },
                   headerLeft: () => (
                     <View style={{marginRight: 10}}>
                       <Icon.Button

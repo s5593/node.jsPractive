@@ -15,10 +15,10 @@ const HeaderView = styled.View`
 
 `;
 
-const Header = ({name}) => {
+const Header = ({name, size=32}) => {
     return(
         <HeaderView>
-            <HeaderText>
+            <HeaderText style={{fontSize: size}}>
                 {name}
             </HeaderText>
         </HeaderView>
